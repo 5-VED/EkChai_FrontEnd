@@ -4,7 +4,16 @@
 
     <mat-toolbar-row>
 
+      <div *ngIf="token">
+        <ng-container>
+          <button (click)="toggleDrawerEvent()" mat-icon-button class="example-icon" aria-label="Example icon-button with accountant icon">
+            <mat-icon>dehaze</mat-icon>
+          </button>
+        </ng-container>
+      </div>
+
       <mat-icon>store</mat-icon>
+
       <button mat-button>
         <h1>Ek Chai :)</h1>
       </button>
@@ -18,6 +27,7 @@
           </button>
         </ng-container>
       </div>
+
 
       <ng-container *ngIf="token === null">
         <button mat-button (click)="openLogInDialog()">

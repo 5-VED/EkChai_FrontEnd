@@ -7,7 +7,10 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
   },
-
+  {
+    path: 'cafe',
+    loadChildren: () => import('./cafe/cafe.module').then((m) => m.CafeModule),
+  },
 ];
 
 @NgModule({

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { LogInComponent } from 'src/app/dialoges/log-in/log-in.component';
 import { SignUpComponent } from 'src/app/dialoges/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from 'src/app/dialoges/forgot-password/forgot-password.component';
+import { SharedService } from '../shared.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,15 +13,25 @@ import { ForgotPasswordComponent } from 'src/app/dialoges/forgot-password/forgot
 })
 export class HeaderComponent implements OnInit {
   token: string;
-  constructor(public dialog: MatDialog, public _router: Router) {}
+  showFiller = false;
+
+  constructor(
+    public dialog: MatDialog,
+    public _router: Router,
+    private sharedService: SharedService
+  ) {}
 
   ngOnInit(): void {
     this.checkLocalStorage();
   }
 
   checkLocalStorage() {
-    this.token = localStorage.getItem('token');
+    this.token = localStorage.getItem('Authorization');
     this.token ? false : true;
+  }
+
+  toggleDrawerEvent() {
+    this.sharedService.toggleDrawerEvent(false);
   }
 
   openLogInDialog() {

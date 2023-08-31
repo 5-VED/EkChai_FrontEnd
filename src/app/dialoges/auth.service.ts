@@ -1,5 +1,6 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 interface loginCredentials {
   email: string;
@@ -10,10 +11,23 @@ interface loginCredentials {
   providedIn: 'root',
 })
 export class AuthService {
+  eventSubject = new BehaviorSubject<any>(false);
+
   constructor(
     @Inject('BASE_URL') private baseUrl: string,
     private http: HttpClient
   ) {}
+
+  /**
+   * Sending value to dashboard component
+   */
+  toggleDrawerEvent(value: AnalyserNode) {
+    this.eventSubject.next(value);
+  }
+
+  toggleDrawerObservable(): Observable<any> {
+    return this.eventSubject.asObservable();
+  }
 
   /**
    * @action API to Sign In

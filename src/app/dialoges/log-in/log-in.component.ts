@@ -57,21 +57,28 @@ export class LogInComponent implements OnInit {
   }
 
   logIn() {
-    console.log(this.signInForm.value);
     if (this.signInForm.invalid) {
       return;
     }
+
     this.authService
       .signInUser(this.signInForm.value)
       .pipe()
       .subscribe({
         next: (response) => {
-          response.message, response.token;
+          if (response.message === 'success') {
+            if (response.token) {
+              const token = response.token;
+              localStorage.setItem('Authorization', token);
+            }
+            this._router.navigateByUrl('cafe');
+            this.closeLogInDialog();
+          }
         },
         error: (error) => {
           console.error('error======>', error);
         },
-        complete: () => console.info('complete'),
+        complete: () => console.info('Login Successfully'),
       });
   }
 }
