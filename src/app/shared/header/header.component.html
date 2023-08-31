@@ -1,0 +1,40 @@
+<div style="display: flex;width:100vw">
+
+  <mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+
+      <mat-icon>store</mat-icon>
+      <button mat-button>
+        <h1>Ek Chai :)</h1>
+      </button>
+
+      <span class="example-spacer"></span>
+
+      <div *ngIf="token">
+        <ng-container>
+          <button mat-icon-button class="example-icon" aria-label="Example icon-button with accountant icon">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+        </ng-container>
+      </div>
+
+      <ng-container *ngIf="token === null">
+        <button mat-button (click)="openLogInDialog()">
+          <h1>Login</h1>
+        </button>
+
+        <button mat-button (click)="openSignUpModel()">
+          <h1>Sign Up</h1>
+        </button>
+
+        <button mat-button style="margin: 0 !important;" (click)="openForgotPasswordDialog()">
+          <h1>Forgot Password ?</h1>
+        </button>
+
+      </ng-container>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+</div>

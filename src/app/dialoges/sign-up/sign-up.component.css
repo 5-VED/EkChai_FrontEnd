@@ -1,0 +1,13 @@
+.header {
+  margin-bottom: 1rem;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.send-btn{
+  margin-right: 1rem;
+}

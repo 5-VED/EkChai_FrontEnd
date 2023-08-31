@@ -1,0 +1,22 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-sidenav-container {
+  background-color: white;
+  height: 91%;
+}
+
+mat-sidenav {
+  width: 250px
+}
+
+.icon-display{
+  margin-right: 7px;
+  color: grey;
+}
+
+.image{
+  height: 100vh;
+  width: 100vw;
+}

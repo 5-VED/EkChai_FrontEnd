@@ -1,0 +1,60 @@
+<div>
+  <mat-toolbar color="primary" class="header">
+    <mat-toolbar-row>
+      <p>Sign Up</p>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div>
+    <form [formGroup]="signUpForm">
+
+      <div>
+        <mat-form-field style="width: 25vw;margin-top: 1rem">
+          <mat-label>Name</mat-label>
+          <input formControlName="name" matInput placeholder="Enter Name" type="text">
+          <mat-error *ngIf="signUpForm.get('name').hasError('required')">
+            This field is <strong>required</strong> field
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width: 25vw;margin-top: 1rem">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput placeholder="Ex: john@gmail.com " type="email">
+          <mat-error *ngIf="signUpForm.get('email').hasError('pattern')">
+            Enter email address in proper format
+          </mat-error>
+          <mat-error *ngIf="signUpForm.get('email').hasError('required')          ">
+            This field is <strong>required</strong> field
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field style="width: 25vw;margin-top: 1rem">
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput placeholder="Enter Password" type="password">
+          <mat-error *ngIf="signUpForm.get('password').hasError('required')">
+            Password is <strong>required</strong> field
+          </mat-error>
+
+        </mat-form-field>
+      </div>
+
+      <mat-form-field style="width: 25vw;margin-top: 1rem">
+        <mat-label>Confirm Password</mat-label>
+        <input formControlName="confirmPassword" matInput placeholder="Confirm Password" type="password">
+        <mat-error *ngIf="signUpForm.get('confirmPassword').hasError('required')">
+          Confirm Password is <strong>required</strong> field
+        </mat-error>
+      </mat-form-field>
+    </form>
+
+    <div class="button">
+      <button mat-raised-button color="primary" class="send-btn" (click)="signUpUser()">Sign up</button>
+      <button mat-raised-button color="primary" class="send-btn" (click)="closeSignUpDialog()">Close</button>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,41 @@
+<div class="dialog-container">
+  <mat-toolbar color="primary" class="header">
+    <mat-toolbar-row>
+      <p> Log In</p>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div>
+    <form [formGroup]="signInForm" class="dialog-form">
+
+      <mat-form-field style="width: 25vw;margin-top: 1rem">
+        <mat-label>Email</mat-label>
+
+        <input formControlName="email" matInput placeholder="Ex: john@gmail.com " type="email" name="email">
+        <mat-error *ngIf="signInForm.get('email').hasError('pattern') && !signInForm.hasError('required')">
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="signInForm.get('email').hasError('required')">
+          Email is <strong>required</strong>
+        </mat-error>
+
+      </mat-form-field>
+
+      <mat-form-field style=" width: 25vw;margin-top: 1rem">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput placeholder="Enter Password" type="password">
+
+        <mat-error *ngIf="signInForm.get('password').hasError('required')  ">
+          Password is <strong>required</strong>
+        </mat-error>
+
+      </mat-form-field>
+    </form>
+
+
+    <div class="button">
+      <button mat-raised-button color="primary" style="margin-right:1rem;" (click)="logIn()">Login</button>
+      <button mat-raised-button color="primary" (click)="closeLogInDialog()">Close</button>
+    </div>
+  </div>
+</div>
