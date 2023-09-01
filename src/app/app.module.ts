@@ -10,6 +10,8 @@ import { LogInComponent } from './dialoges/log-in/log-in.component';
 import { SignUpComponent } from './dialoges/sign-up/sign-up.component';
 import { ForgotPasswordComponent } from './dialoges/forgot-password/forgot-password.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const BASE_URL: string = 'http://localhost:3000';
 
@@ -20,6 +22,8 @@ const BASE_URL: string = 'http://localhost:3000';
     LogInComponent,
     SignUpComponent,
     ForgotPasswordComponent,
+    NotFoundComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,

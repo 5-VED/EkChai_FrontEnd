@@ -30,8 +30,12 @@ export class HeaderComponent implements OnInit {
     this.token ? false : true;
   }
 
-  toggleDrawerEvent() {
-    this.sharedService.toggleDrawerEvent(false);
+  toggleValue() {
+    this.sharedService.toggleVale();
+  }
+
+  isButtonDisabled() {
+    return this._router.url === '/';
   }
 
   openLogInDialog() {

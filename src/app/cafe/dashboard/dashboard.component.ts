@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SharedService } from 'src/app/shared/shared.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,15 +7,7 @@ import { SharedService } from 'src/app/shared/shared.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  showFiller: boolean;
+  constructor(private _router: Router) {}
 
-  constructor(private sharedServices: SharedService) {}
-
-  ngOnInit(): void {
-    this.sharedServices.toggleDrawerObservable().subscribe((value) => {
-      this.showFiller = !value;
-    });
-  }
-
-
+  ngOnInit(): void {}
 }

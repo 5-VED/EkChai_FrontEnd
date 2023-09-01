@@ -21,13 +21,7 @@ export class AuthService {
   /**
    * Sending value to dashboard component
    */
-  toggleDrawerEvent(value: AnalyserNode) {
-    this.eventSubject.next(value);
-  }
 
-  toggleDrawerObservable(): Observable<any> {
-    return this.eventSubject.asObservable();
-  }
 
   /**
    * @action API to Sign In

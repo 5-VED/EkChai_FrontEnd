@@ -1,0 +1,56 @@
+<app-header></app-header>
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" [opened]="showFiller">
+
+    <mat-list>
+      <mat-list-item>
+        <button mat-button [routerLink]="'/cafe'">
+          <mat-icon>dashboard</mat-icon>
+          Dashboard
+        </button>
+      </mat-list-item>
+
+
+      <mat-list-item>
+        <button mat-button [routerLink]="'/cafe/managecategory'">
+          <mat-icon>view_list</mat-icon>
+          Manage Category
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button [routerLink]="'/cafe/products'">
+          <mat-icon>category</mat-icon>
+          Manage Product
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button [routerLink]="'/cafe/orders'">
+          <mat-icon>format_list_numbered</mat-icon>
+          Manage Order
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button [routerLink]="'/cafe/bills'">
+          <mat-icon>receipt_long</mat-icon>
+          View Bills
+        </button>
+      </mat-list-item>
+
+      <mat-list-item>
+        <button mat-button [routerLink]="'/cafe/users'">
+          <mat-icon>supervisor_account</mat-icon>
+          View Users
+        </button>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+
+</mat-drawer-container>

@@ -1,0 +1,33 @@
+/* styles.css */
+
+.example-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.mat-drawer {
+  width: 250px; /* Adjust the width as needed */
+  background-color: #524e4e; /* Drawer background color */
+  color: #fff; /* Text color inside the drawer */
+  padding: 16px;
+}
+
+.mat-drawer-content {
+  flex-grow: 1;
+  padding: 16px;
+  background-color: #f0f0f0; /* Main content background color */
+  overflow-y: auto;
+}
+
+.mat-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.mat-list-item button {
+  color: #fff; /* Button text color */
+}
+
+/* Additional styles as needed */

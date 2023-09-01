@@ -5,14 +5,12 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class SharedService {
-  eventSubject = new BehaviorSubject<any>(false);
+  valueSubject = new BehaviorSubject<any>(false);
+  value$ = this.valueSubject.asObservable();
+
   constructor() {}
 
-  toggleDrawerEvent(value: boolean) {
-    this.eventSubject.next(value);
-  }
-
-  toggleDrawerObservable(): Observable<any> {
-    return this.eventSubject.asObservable();
+  toggleVale() {
+    this.valueSubject.next(!this.valueSubject.value);
   }
 }

@@ -4,9 +4,10 @@
 
     <mat-toolbar-row>
 
-      <div *ngIf="token">
+      <div *ngIf="token" >
         <ng-container>
-          <button (click)="toggleDrawerEvent()" mat-icon-button class="example-icon" aria-label="Example icon-button with accountant icon">
+          <button [disabled]="isButtonDisabled()"  (click)="toggleValue()" mat-icon-button class="example-icon"
+            aria-label="Example icon-button with accountant icon">
             <mat-icon>dehaze</mat-icon>
           </button>
         </ng-container>
