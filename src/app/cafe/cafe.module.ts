@@ -11,6 +11,7 @@ import { ManageProductsComponent } from './manage-products/manage-products.compo
 import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 import { ViewBillsComponent } from './view-bills/view-bills.component';
 import { UsersComponent } from './users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,12 @@ import { UsersComponent } from './users/users.component';
     ViewBillsComponent,
     UsersComponent,
   ],
-  imports: [CommonModule, RouterModule, CafeRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    CafeRoutingModule,
+    SharedModule,
+    HttpClientModule,
+  ],
 })
 export class CafeModule {}

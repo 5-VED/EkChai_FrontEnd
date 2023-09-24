@@ -3,6 +3,7 @@
     <mat-card-title>Dashboard</mat-card-title>
   </mat-card-header>
 </mat-card>
+
 <div class="cards">
   <mat-card class="card-content">
     <mat-card-header>
@@ -10,11 +11,13 @@
         <mat-card-title><span style="font-size: x-large;">Total Categories</span></mat-card-title>
       </mat-card-title-group>
     </mat-card-header>
+
     <mat-card-content class="card-content">
-      <p><span style="font-size: x-large;">5</span></p>
+      <p><span style="font-size: x-large;">{{categories}}</span></p>
       <button mat-raised-button color="primary" routerLink="/cafe/managecategory">View Categories</button>
     </mat-card-content>
   </mat-card>
+
   <mat-card class="card-content">
     <mat-card-header>
       <mat-card-title-group>
@@ -22,10 +25,12 @@
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content class="card-content">
-      <p><span style="font-size: x-large;">18</span></p>
+      <p><span style="font-size: x-large;">{{products}}</span></p>
       <button mat-raised-button color="primary" routerLink="/cafe/products">View Product</button>
     </mat-card-content>
   </mat-card>
+
+
   <mat-card class="card-content">
     <mat-card-header>
       <mat-card-title-group>
@@ -33,7 +38,7 @@
       </mat-card-title-group>
     </mat-card-header>
     <mat-card-content class="card-content">
-      <p><span style="font-size: x-large;">5</span></p>
+      <p><span style="font-size: x-large;">{{bills}}</span></p>
       <button mat-raised-button color="primary" routerLink="/cafe/bills">View Bills</button>
     </mat-card-content>
   </mat-card>
