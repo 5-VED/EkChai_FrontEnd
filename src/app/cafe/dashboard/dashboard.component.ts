@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { CafeService } from '../cafe.service';
 
 @Component({
@@ -12,7 +11,7 @@ export class DashboardComponent implements OnInit {
   categories: number;
   products: number;
 
-  constructor(private _router: Router, private cafeService: CafeService) {}
+  constructor(private cafeService: CafeService) {}
 
   ngOnInit(): void {
     this.cafeService
