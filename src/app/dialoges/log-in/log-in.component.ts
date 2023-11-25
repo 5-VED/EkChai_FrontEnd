@@ -66,7 +66,6 @@ export class LogInComponent implements OnInit {
       .pipe()
       .subscribe({
         next: (response) => {
-          console.log(response)
           if (response.message === 'success') {
             if (response.token) {
               const token = response.token;
@@ -83,3 +82,5 @@ export class LogInComponent implements OnInit {
       });
   }
 }
+
+

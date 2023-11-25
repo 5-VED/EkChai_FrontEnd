@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkLocalStorage();
-  }
+}
 
   checkLocalStorage() {
     this.token = localStorage.getItem('Authorization');

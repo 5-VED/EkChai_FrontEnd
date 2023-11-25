@@ -9,7 +9,10 @@ import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent },
-  { path: 'cafe', component: DashboardComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
   { path: 'managecategory', component: ManageCategoryComponent },
   { path: 'products', component: ManageProductsComponent },
   { path: 'orders', component: ManageOrdersComponent },
